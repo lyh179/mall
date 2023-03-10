@@ -1,6 +1,7 @@
 package com.scut.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,20 +26,22 @@ import com.scut.common.utils.R;
  * @date 2023-03-07 20:47:10
  */
 @RestController
-//@RequestMapping("product/category")
+@RequestMapping("product/category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
     /**
-     * 列表
+     * 查出所有分类以及子分类，以树形结构组装起来
      */
-    @RequestMapping("/list")
+    @RequestMapping("/list/tree")
     //@RequiresPermissions("product:category:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = categoryService.queryPage(params);
 
-        return R.ok().put("page", page);
+        List<CategoryEntity> entities = categoryService.listWithTree();
+
+
+        return R.ok().put("data", entities);
     }
 
 

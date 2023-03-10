@@ -25,7 +25,7 @@ import com.scut.common.utils.R;
  * @date 2023-03-07 20:47:11
  */
 @RestController
-//@RequestMapping("product/skuinfo")
+@RequestMapping("product/skuinfo")
 public class SkuInfoController {
     @Autowired
     private SkuInfoService skuInfoService;

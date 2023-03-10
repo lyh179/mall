@@ -25,7 +25,7 @@ import com.scut.common.utils.R;
  * @date 2023-03-07 20:47:10
  */
 @RestController
-//@RequestMapping("product/spuinfodesc")
+@RequestMapping("product/spuinfodesc")
 public class SpuInfoDescController {
     @Autowired
     private SpuInfoDescService spuInfoDescService;

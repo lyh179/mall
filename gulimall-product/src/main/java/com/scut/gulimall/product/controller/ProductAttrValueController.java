@@ -25,7 +25,7 @@ import com.scut.common.utils.R;
  * @date 2023-03-07 20:47:11
  */
 @RestController
-//@RequestMapping("product/productattrvalue")
+@RequestMapping("product/productattrvalue")
 public class ProductAttrValueController {
     @Autowired
     private ProductAttrValueService productAttrValueService;
